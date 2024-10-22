@@ -1,0 +1,102 @@
+:root {
+    --facebook-color: #3b5998;
+    --twitter-color: #1da1f2;
+    --instagram-color: #e1306c;
+    --youtube-color: #ff0000;
+    --github-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #dadada;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 20px;
+}
+
+.tooltip {
+    background: var(--facebook-color);
+    color: #fff;
+    padding: 0 30px;
+    border-radius: 25px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    transition: 0.5s;
+    opacity: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;;
+    background: var(--facebook-color);
+    transform: translate(-50%, 50%) rotate(45deg);
+    left: 50%;
+    bottom: 0;
+}
+
+.icon:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.icon:hover .tooltip {
+    top: -70px;
+    opacity: 1;
+}
+
+.facebook.icon:hover,
+.facebook .tooltip::before,
+.facebook .tooltip {
+    background: var(--facebook-color);
+}
+
+.youtube.icon:hover,
+.youtube .tooltip::before,
+.youtube .tooltip {
+    background: var(--youtube-color);
+}
+
+.twitter.icon:hover,
+.twitter .tooltip::before,
+.twitter .tooltip {
+    background: var(--twitter-color);
+}
+
+.instagram.icon:hover,
+.instagram .tooltip::before,
+.instagram .tooltip {
+    background: var(--instagram-color);
+}
+
+.github.icon:hover,
+.github .tooltip::before,
+.github .tooltip {
+    background: var(--github-color);
+}
